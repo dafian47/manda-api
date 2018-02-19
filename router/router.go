@@ -68,7 +68,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 		{
 			userRoute.GET("/", baseController.GetUserAll)
 			userRoute.GET("/:id", baseController.GetUser)
-			userRoute.PUT("/", baseController.UpdateUser)
+			userRoute.PUT("/:id", baseController.UpdateUser)
 			userRoute.DELETE("/:id", baseController.DeleteUser)
 		}
 
@@ -77,7 +77,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			channelRoute.GET("/", baseController.GetChannelAll)
 			channelRoute.GET("/:id", baseController.GetChannel)
 			channelRoute.POST("/", baseController.CreateChannel)
-			channelRoute.PUT("/", baseController.UpdateChannel)
+			channelRoute.PUT("/:id", baseController.UpdateChannel)
 			channelRoute.DELETE("/:id", baseController.DeleteChannel)
 		}
 
@@ -86,7 +86,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			postRoute.GET("/", baseController.GetPostAll)
 			postRoute.GET("/:id", baseController.GetPost)
 			postRoute.POST("/", baseController.CreatePost)
-			postRoute.PUT("/", baseController.UpdatePost)
+			postRoute.PUT("/:id", baseController.UpdatePost)
 			postRoute.DELETE("/:id", baseController.DeletePost)
 		}
 
@@ -95,7 +95,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			commentRoute.GET("/", baseController.GetCommentAll)
 			commentRoute.GET("/:id", baseController.GetComment)
 			commentRoute.POST("/", baseController.CreateComment)
-			commentRoute.PUT("/", baseController.UpdateComment)
+			commentRoute.PUT("/:id", baseController.UpdateComment)
 			commentRoute.DELETE("/:id", baseController.DeleteComment)
 		}
 
@@ -106,7 +106,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				marriageRoute.GET("/", baseController.GetMarriageAll)
 				marriageRoute.GET("/:id", baseController.GetMarriage)
 				marriageRoute.POST("/", baseController.CreateMarriage)
-				marriageRoute.PUT("/", baseController.UpdateMarriage)
+				marriageRoute.PUT("/:id", baseController.UpdateMarriage)
 				marriageRoute.DELETE("/:id", baseController.DeleteMarriage)
 			}
 
@@ -115,7 +115,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				workRoute.GET("/", baseController.GetWorkAll)
 				workRoute.GET("/:id", baseController.GetWork)
 				workRoute.POST("/", baseController.CreateWork)
-				workRoute.PUT("/", baseController.UpdateWork)
+				workRoute.PUT("/:id", baseController.UpdateWork)
 				workRoute.DELETE("/:id", baseController.DeleteWork)
 			}
 
@@ -124,7 +124,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				majorRoute.GET("/", baseController.GetMajorAll)
 				majorRoute.GET("/:code", baseController.GetMajor)
 				majorRoute.POST("/", baseController.CreateMajor)
-				majorRoute.PUT("/", baseController.UpdateMajor)
+				majorRoute.PUT("/:code", baseController.UpdateMajor)
 				majorRoute.DELETE("/:code", baseController.DeleteMajor)
 			}
 
@@ -133,7 +133,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				roleRoute.GET("/", baseController.GetRoleAll)
 				roleRoute.GET("/:code", baseController.GetRole)
 				roleRoute.POST("/", baseController.CreateRole)
-				roleRoute.PUT("/", baseController.UpdateRole)
+				roleRoute.PUT("/:code", baseController.UpdateRole)
 				roleRoute.DELETE("/:code", baseController.DeleteRole)
 			}
 
@@ -142,7 +142,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				userRoute.GET("/", baseController.GetStatusUserAll)
 				userRoute.GET("/:code", baseController.GetStatusUser)
 				userRoute.POST("/", baseController.CreateStatusUser)
-				userRoute.PUT("/", baseController.UpdateStatusUser)
+				userRoute.PUT("/:code", baseController.UpdateStatusUser)
 				userRoute.DELETE("/:code", baseController.DeleteStatusUser)
 			}
 
@@ -151,7 +151,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 				threadRoute.GET("/", baseController.GetStatusThreadAll)
 				threadRoute.GET("/:code", baseController.GetStatusThread)
 				threadRoute.POST("/", baseController.CreateStatusThread)
-				threadRoute.PUT("/", baseController.UpdateStatusThread)
+				threadRoute.PUT("/:code", baseController.UpdateStatusThread)
 				threadRoute.DELETE("/:code", baseController.DeleteStatusThread)
 			}
 		}

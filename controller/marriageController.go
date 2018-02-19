@@ -20,7 +20,7 @@ func (c *BaseController) GetMarriageAll(context *gin.Context) {
 	c.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&itemList)
 
 	if len(itemList) == 0 {
-		responseJSON(context, http.StatusBadRequest, "Empty Data", nil)
+		responseJSON(context, http.StatusNotFound, "Empty Data", nil)
 	}
 
 	responseJSON(context, http.StatusOK, "Success get data", itemList)
@@ -55,7 +55,7 @@ func (c *BaseController) CreateMarriage(context *gin.Context) {
 	c.DB.Save(&item)
 
 	if item.ID == 0 {
-		responseJSON(context, http.StatusNotFound, "Not found data", nil)
+		responseJSON(context, http.StatusBadRequest, "Failed create data", nil)
 		return
 	}
 
@@ -66,18 +66,18 @@ func (c *BaseController) UpdateMarriage(context *gin.Context) {
 
 	var item model.MandaMarriageStatus
 
+	id := util.ConvertStringToInt(context.Param("id"))
+
 	err := context.BindJSON(&item)
 	if err != nil {
 		responseJSON(context, http.StatusBadRequest, "Failed bind data", nil)
 		return
 	}
 
-	id := util.ConvertStringToInt(context.Param("id"))
-
 	c.DB.Where(&model.MandaMarriageStatus{ID:id}).Save(&item)
 
 	if item.ID == 0 {
-		responseJSON(context, http.StatusNotFound, "Not found data", nil)
+		responseJSON(context, http.StatusBadRequest, "Failed update data", nil)
 		return
 	}
 
