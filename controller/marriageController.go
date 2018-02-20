@@ -20,7 +20,7 @@ func (c *BaseController) GetMarriageAll(context *gin.Context) {
 	c.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&itemList)
 
 	if len(itemList) == 0 {
-		responseJSON(context, http.StatusNotFound, "Empty Data", nil)
+		responseJSON(context, http.StatusNotFound, "Empty data", nil)
 	}
 
 	responseJSON(context, http.StatusOK, "Success get data", itemList)
