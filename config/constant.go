@@ -25,6 +25,9 @@ const REPORT_SPAM = "REPORT_SPAM"
 const BLOCKED = "BLOCKED"
 const WAITING_APPROVAL = "WAITING_APPROVAL"
 
+// User type
+const USER = "USER"
+
 func init() {
 
 	isResult := os.Getenv("IS_PRODUCTION")

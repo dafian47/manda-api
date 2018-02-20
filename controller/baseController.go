@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/dafian47/manda-api/model/entity"
+	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 )
 
@@ -12,8 +12,8 @@ type BaseController struct {
 
 func responseJSON(context *gin.Context, status int, message string, data interface{}) {
 	context.JSON(status, &entity.Response{
-		Status: status,
+		Status:  status,
 		Message: message,
-		Data: data,
+		Data:    data,
 	})
 }

@@ -5,11 +5,12 @@ import "time"
 type MandaUser struct {
 	ID             string     `json:"id" gorm:"primary_key;unique"`
 	Username       string     `json:"username" gorm:"-"`
+	Password       string     `json:"password" gorm:"-"`
 	FullName       string     `json:"full_name" binding:"required"`
 	NickName       string     `json:"nick_name" binding:"required"`
 	Title          string     `json:"title"`
 	BirthPlace     string     `json:"birth_place" binding:"required"`
-	BirthDate      time.Time  `json:"birth_date" binding:"required"`
+	BirthDate      time.Time  `json:"birth_date"`
 	Gender         string     `json:"gender" binding:"required" gorm:"index"`
 	Address        string     `json:"address" binding:"required" gorm:"type:text"`
 	Phone          string     `json:"phone" binding:"required"`

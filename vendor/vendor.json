@@ -87,6 +87,12 @@
 			"revisionTime": "2017-11-07T05:05:31Z"
 		},
 		{
+			"checksumSHA1": "eDQ6f1EsNf+frcRO/9XukSEchm8=",
+			"path": "github.com/satori/go.uuid",
+			"revision": "36e9d2ebbde5e3f13ab2e25625fd453271d6522e",
+			"revisionTime": "2018-01-03T17:44:51Z"
+		},
+		{
 			"checksumSHA1": "UQlV1TiV2ICpxFR7zPGmTD5Yj+Y=",
 			"path": "github.com/ugorji/go/codec",
 			"revision": "b5b949564861e43a03568a0b134c135cf318e5c8",

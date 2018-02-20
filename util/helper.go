@@ -1,6 +1,19 @@
 package util
 
-import "strconv"
+import (
+	"github.com/satori/go.uuid"
+	"strconv"
+)
+
+func GenerateUserID() (string, error) {
+
+	userId, err := uuid.NewV4()
+	if err != nil {
+		return "", err
+	}
+
+	return userId.String(), nil
+}
 
 func ConvertStringToUint(origin string) uint {
 

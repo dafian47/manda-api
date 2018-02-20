@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/dafian47/manda-api/model"
 	"github.com/dafian47/manda-api/util"
+	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
@@ -33,14 +33,14 @@ func (c *BaseController) GetRole(context *gin.Context) {
 
 	code := context.Param("code")
 
-	c.DB.Where(&model.MandaRole{Code:code}).First(&item)
+	c.DB.Where(&model.MandaRole{Code: code}).First(&item)
 
 	if item.Code == "" {
 		responseJSON(context, http.StatusNotFound, "Not found data", nil)
 		return
 	}
 
-	responseJSON(context, http.StatusOK, "Success get data",item)
+	responseJSON(context, http.StatusOK, "Success get data", item)
 }
 
 func (c *BaseController) CreateRole(context *gin.Context) {
@@ -75,7 +75,7 @@ func (c *BaseController) UpdateRole(context *gin.Context) {
 		return
 	}
 
-	c.DB.Where(&model.MandaRole{Code:code}).Save(&item)
+	c.DB.Where(&model.MandaRole{Code: code}).Save(&item)
 
 	if item.Code == "" {
 		responseJSON(context, http.StatusBadRequest, "Failed update data", nil)
@@ -91,7 +91,7 @@ func (c *BaseController) DeleteRole(context *gin.Context) {
 
 	code := context.Param("code")
 
-	c.DB.Where(&model.MandaRole{Code:code}).First(&item)
+	c.DB.Where(&model.MandaRole{Code: code}).First(&item)
 
 	if item.Code == "" {
 		responseJSON(context, http.StatusNotFound, "Not found data", nil)

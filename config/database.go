@@ -1,10 +1,10 @@
 package config
 
 import (
+	"github.com/dafian47/manda-api/model"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"log"
-	"github.com/dafian47/manda-api/model"
 )
 
 func InitDB(databaseUrl string) *gorm.DB {
@@ -31,10 +31,10 @@ func InitDB(databaseUrl string) *gorm.DB {
 		&model.MandaUserStatus{},
 		&model.MandaThreadStatus{},
 		// Table Primary
-		//&model.MandaAuth{},
-		//&model.MandaUser{},
+		&model.MandaAuth{},
+		&model.MandaUser{},
 		//&model.MandaChannel{},
-		//&model.MandaPost{},
+		//&model.MandaThread{},
 		//&model.MandaComment{},
 		//&model.MandaSocialAccount{},
 	)

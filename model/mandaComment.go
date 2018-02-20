@@ -5,7 +5,7 @@ import "time"
 type MandaComment struct {
 	ID           string     `json:"id" gorm:"primary_key;unique"`
 	Comment      string     `json:"comment" binding:"required"`
-	PostID       string     `json:"post_id" gorm:"index"`
+	ThreadID     string     `json:"thread_id" gorm:"index"`
 	UserID       string     `json:"user_id" gorm:"index"`
 	CreatorName  string     `json:"creator_name" gorm:"-"`
 	CreatorPhoto string     `json:"creator_photo" gorm:"-"`

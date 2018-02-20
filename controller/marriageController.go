@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"net/http"
 	"github.com/dafian47/manda-api/model"
 	"github.com/dafian47/manda-api/util"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func (c *BaseController) GetMarriageAll(context *gin.Context) {
@@ -32,7 +32,7 @@ func (c *BaseController) GetMarriage(context *gin.Context) {
 
 	id := util.ConvertStringToInt(context.Param("id"))
 
-	c.DB.Where(&model.MandaMarriageStatus{ID:id}).First(&item)
+	c.DB.Where(&model.MandaMarriageStatus{ID: id}).First(&item)
 
 	if item.ID == 0 {
 		responseJSON(context, http.StatusNotFound, "Not found data", nil)
@@ -74,7 +74,7 @@ func (c *BaseController) UpdateMarriage(context *gin.Context) {
 		return
 	}
 
-	c.DB.Where(&model.MandaMarriageStatus{ID:id}).Save(&item)
+	c.DB.Where(&model.MandaMarriageStatus{ID: id}).Save(&item)
 
 	if item.ID == 0 {
 		responseJSON(context, http.StatusBadRequest, "Failed update data", nil)
@@ -90,7 +90,7 @@ func (c *BaseController) DeleteMarriage(context *gin.Context) {
 
 	id := util.ConvertStringToInt(context.Param("id"))
 
-	c.DB.Where(&model.MandaMarriageStatus{ID:id}).First(&item)
+	c.DB.Where(&model.MandaMarriageStatus{ID: id}).First(&item)
 
 	if item.ID == 0 {
 		responseJSON(context, http.StatusNotFound, "Not found data", nil)

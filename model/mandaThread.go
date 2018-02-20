@@ -2,7 +2,7 @@ package model
 
 import "time"
 
-type MandaPost struct {
+type MandaThread struct {
 	ID           string     `json:"id" gorm:"primary_key;unique"`
 	Title        string     `json:"name" binding:"required"`
 	Content      string     `json:"content" binding:"required" gorm:"type:text"`

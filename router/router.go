@@ -2,11 +2,11 @@ package router
 
 import (
 	"github.com/dafian47/manda-api/config"
+	"github.com/dafian47/manda-api/controller"
 	"github.com/dafian47/manda-api/util"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	"github.com/unrolled/secure"
-	"github.com/dafian47/manda-api/controller"
 )
 
 func InitRouter(db *gorm.DB) *gin.Engine {
@@ -52,7 +52,7 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 	router.MaxMultipartMemory = 8 << 20
 	router.Static("/image", "./resource/images")
 
-	baseController := controller.BaseController{DB:db}
+	baseController := controller.BaseController{DB: db}
 
 	authV1 := router.Group("/auth")
 	{

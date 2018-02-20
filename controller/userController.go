@@ -14,6 +14,6 @@ func (c *BaseController) UpdateUser(context *gin.Context) {
 
 }
 
-func (c *BaseController) DeleteUser(context *gin.Context)  {
+func (c *BaseController) DeleteUser(context *gin.Context) {
 
 }

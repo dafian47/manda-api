@@ -10,7 +10,7 @@ func (c *BaseController) GetChannel(context *gin.Context) {
 
 }
 
-func (c *BaseController) CreateChannel(context *gin.Context)  {
+func (c *BaseController) CreateChannel(context *gin.Context) {
 
 }
 
