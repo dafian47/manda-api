@@ -14,7 +14,7 @@ type MandaUser struct {
 	Gender         string     `json:"gender" binding:"required" gorm:"index"`
 	Address        string     `json:"address" binding:"required" gorm:"type:text"`
 	Phone          string     `json:"phone" binding:"required"`
-	Email          string     `json:"email" binding:"required" gorm:"unique"`
+	Email          string     `json:"email" binding:"required"`
 	MarriageStatus string     `json:"marriage_status" binding:"required" gorm:"index"`
 	Generation     string     `json:"generation" binding:"required" gorm:"index"`
 	Major          string     `json:"major" binding:"required" gorm:"index"`

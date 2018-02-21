@@ -82,6 +82,8 @@ func (c *BaseController) Register(context *gin.Context) {
 		return
 	}
 
+	user.Password = ""
+
 	responseJSON(context, http.StatusOK, "Success register data", user)
 }
 
