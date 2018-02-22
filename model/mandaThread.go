@@ -4,7 +4,7 @@ import "time"
 
 type MandaThread struct {
 	ID           string     `json:"id" gorm:"primary_key;unique"`
-	Title        string     `json:"name" binding:"required"`
+	Title        string     `json:"title" binding:"required"`
 	Content      string     `json:"content" binding:"required" gorm:"type:text"`
 	Status       string     `json:"status" binding:"required" gorm:"index"`
 	UrlImage     string     `json:"url_image"`

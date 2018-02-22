@@ -5,14 +5,34 @@ import (
 	"strconv"
 )
 
-func GenerateUserID() (string, error) {
+func GenerateChannelID() (string, error) {
 
-	userId, err := uuid.NewV4()
+	channelID, err := uuid.NewV4()
 	if err != nil {
 		return "", err
 	}
 
-	return userId.String(), nil
+	return channelID.String(), nil
+}
+
+func GenerateThreadID() (string, error) {
+
+	threadID, err := uuid.NewV4()
+	if err != nil {
+		return "", err
+	}
+
+	return threadID.String(), nil
+}
+
+func GenerateUserID() (string, error) {
+
+	userID, err := uuid.NewV4()
+	if err != nil {
+		return "", err
+	}
+
+	return userID.String(), nil
 }
 
 func ConvertStringToUint(origin string) uint {

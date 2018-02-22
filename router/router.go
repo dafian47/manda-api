@@ -81,13 +81,13 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			channelRoute.DELETE("/:id", baseController.DeleteChannel)
 		}
 
-		postRoute := apiV1.Group("/post")
+		postRoute := apiV1.Group("/thread")
 		{
-			postRoute.GET("/", baseController.GetPostAll)
-			postRoute.GET("/:id", baseController.GetPost)
-			postRoute.POST("/", baseController.CreatePost)
-			postRoute.PUT("/:id", baseController.UpdatePost)
-			postRoute.DELETE("/:id", baseController.DeletePost)
+			postRoute.GET("/", baseController.GetThreadAll)
+			postRoute.GET("/:id", baseController.GetThread)
+			postRoute.POST("/", baseController.CreateThread)
+			postRoute.PUT("/:id", baseController.UpdateThread)
+			postRoute.DELETE("/:id", baseController.DeleteThread)
 		}
 
 		commentRoute := apiV1.Group("/comment")
