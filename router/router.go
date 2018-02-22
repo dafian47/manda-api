@@ -81,23 +81,29 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			channelRoute.DELETE("/:id", baseController.DeleteChannel)
 		}
 
-		postRoute := apiV1.Group("/thread")
+		threadRoute := apiV1.Group("/thread")
 		{
-			postRoute.GET("/", baseController.GetThreadAll)
-			postRoute.GET("/:id", baseController.GetThread)
-			postRoute.POST("/", baseController.CreateThread)
-			postRoute.PUT("/:id", baseController.UpdateThread)
-			postRoute.DELETE("/:id", baseController.DeleteThread)
+			threadRoute.GET("/", baseController.GetThreadAll)
+			threadRoute.GET("/:id", baseController.GetThread)
+			threadRoute.POST("/", baseController.CreateThread)
+			threadRoute.PUT("/:id", baseController.UpdateThread)
+			threadRoute.DELETE("/:id", baseController.DeleteThread)
+
+			threadRoute.GET("/:id/comment", baseController.GetCommentAll)
+			threadRoute.GET("/:id/comment/:comment_id", baseController.GetComment)
+			threadRoute.POST("/:id/comment/", baseController.CreateComment)
+			threadRoute.PUT("/:id/comment/:comment_id", baseController.UpdateComment)
+			threadRoute.DELETE("/:id/comment/:comment_id", baseController.DeleteComment)
 		}
 
-		commentRoute := apiV1.Group("/comment")
-		{
-			commentRoute.GET("/", baseController.GetCommentAll)
-			commentRoute.GET("/:id", baseController.GetComment)
-			commentRoute.POST("/", baseController.CreateComment)
-			commentRoute.PUT("/:id", baseController.UpdateComment)
-			commentRoute.DELETE("/:id", baseController.DeleteComment)
-		}
+		//commentRoute := apiV1.Group("/thread/:thread_id/comment")
+		//{
+		//	commentRoute.GET("/", baseController.GetCommentAll)
+		//	commentRoute.GET("/:id", baseController.GetComment)
+		//	commentRoute.POST("/", baseController.CreateComment)
+		//	commentRoute.PUT("/:id", baseController.UpdateComment)
+		//	commentRoute.DELETE("/:id", baseController.DeleteComment)
+		//}
 
 		masterRoute := apiV1.Group("/master")
 		{

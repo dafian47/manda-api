@@ -35,7 +35,7 @@ func InitDB(databaseUrl string) *gorm.DB {
 		&model.MandaUser{},
 		&model.MandaChannel{},
 		&model.MandaThread{},
-		//&model.MandaComment{},
+		&model.MandaComment{},
 		//&model.MandaSocialAccount{},
 	)
 

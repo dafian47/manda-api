@@ -25,6 +25,16 @@ func GenerateThreadID() (string, error) {
 	return threadID.String(), nil
 }
 
+func GenerateCommentID() (string, error) {
+
+	commentID, err := uuid.NewV4()
+	if err != nil {
+		return "", err
+	}
+
+	return commentID.String(), nil
+}
+
 func GenerateUserID() (string, error) {
 
 	userID, err := uuid.NewV4()
