@@ -96,15 +96,6 @@ func InitRouter(db *gorm.DB) *gin.Engine {
 			threadRoute.DELETE("/:id/comment/:comment_id", baseController.DeleteComment)
 		}
 
-		//commentRoute := apiV1.Group("/thread/:thread_id/comment")
-		//{
-		//	commentRoute.GET("/", baseController.GetCommentAll)
-		//	commentRoute.GET("/:id", baseController.GetComment)
-		//	commentRoute.POST("/", baseController.CreateComment)
-		//	commentRoute.PUT("/:id", baseController.UpdateComment)
-		//	commentRoute.DELETE("/:id", baseController.DeleteComment)
-		//}
-
 		masterRoute := apiV1.Group("/master")
 		{
 			marriageRoute := masterRoute.Group("/marriage")

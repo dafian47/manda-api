@@ -26,10 +26,10 @@ You should also install [GoVendor](https://github.com/kardianos/govendor) if you
 
 * [X] Rest for Login & Register
 * [ ] Rest for Forget Password & Email Verification
-* [ ] Rest for User, Channel & Thread
-* [ ] Rest for Comments
-* [ ] Rest for Edit & Delete Channel
-* [ ] Rest for Edit & Delete Thread
+* [X] Rest for User, Channel & Thread
+* [X] Rest for Comments
+* [X] Rest for Edit & Delete Channel
+* [X] Rest for Edit & Delete Thread
 * [X] Rest for Data Master
 * [ ] Rest for Statistic
 * [ ] Using JWT Token
